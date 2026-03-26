@@ -1,0 +1,98 @@
+body{
+	font-family: Arial, sans-serif;
+	margin: 20px;
+	
+	background: #c2e59c;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+p{
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+}
+
+
+.catalogo {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+}
+.producto {
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 5px 5px 6px rgba(0,0,0,0.5);
+}
+.producto img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+.producto h3 {
+	margin: 10px 0 5px;
+	font-size: 17px;
+}
+.precio {
+	font-size: 18px;
+	font-weight: bold;
+	color: #4747fb;
+	margin-top: 10px;
+}
+.detalle {
+	display: grid;
+}
+.encabezado {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 15px;
+}
+.encabezado img{
+	width: 300px;
+	max-height: 100%;
+	height: auto;
+	margin-right: 20px 0;
+	filter: drop-shadow(0px 10px 10px rgba(250,250,250,1));
+}
+.encabezado h1 {
+	font-size: 2.5rem;
+	color: #FFF;
+	margin: 0;
+}
+@media print {
+	.producto {
+		border: 1px solid #ddd;
+		break-inside: avoid;
+		page-break-inside: avoid;
+		background:#EEE;
+	}
+}
+
+/* --- ESTO ARREGLA EL CELULAR --- */
+@media (max-width: 768px) {
+    .catalogo {
+        /* Olvidamos el minmax y el auto-fill, forzamos 2 columnas iguales */
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 10px; /* Menos espacio entre tarjetas para ganar lugar */
+    }
+
+    .producto {
+        padding: 10px; /* Achicamos el margen interno */
+    }
+
+    .producto h3 {
+        font-size: 15px; /* Título un poco más chico para que no haga tantas líneas */
+        line-height: 1.2;
+    }
+
+    .precio {
+        font-size: 16px;
+    }
+}
